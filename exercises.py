@@ -8,8 +8,8 @@ counter = 0
 #breakpoint()
 while counter <= len(user_string) and not user_string[counter].isnumeric():
     counter += 1
-    print(counter)
 
+print(counter)
 if counter <= len(user_string):
     print(f"Here is your number {user_string[counter]} and its index is {counter}")
 

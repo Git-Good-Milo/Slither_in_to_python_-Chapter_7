@@ -41,6 +41,10 @@ while counter_str < len(user_string) and not user_string[counter_str].isnumeric(
         print(f"Here is your number {user_string[counter_str:counter_num]} and its index is {counter_str}")
 
 
+# Question 3
+# 
+
+
 
 
 

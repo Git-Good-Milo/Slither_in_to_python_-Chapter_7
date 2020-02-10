@@ -5,13 +5,18 @@
 user_string = input("Please enter your string here: ")
 counter = 0
 
-#breakpoint()
-while counter <= len(user_string) and not user_string[counter].isnumeric():
+# Next we construct a while loop to check each index for a number
+while counter < len(user_string) and not user_string[counter].isnumeric():
     counter += 1
 
-print(counter)
-if counter <= len(user_string):
+# The conditional statements are used to print out the out put, of whether the string contains a number or not
+if counter >= len(user_string):
+    print("Sorry your string does not contain any numbers")
+
+elif counter < len(user_string):
     print(f"Here is your number {user_string[counter]} and its index is {counter}")
 
-else:
-    print("Your string does not contain a number")
+
+
+
+

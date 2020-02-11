@@ -23,8 +23,8 @@
 # user_string = input("Please enter your string here: ")
 # counter_str = 0
 # counter_num = 0
-#
-# # Next we construct a while loop to check each index for a number
+
+# Next we construct a while loop to check each index for a number
 # while counter_str < len(user_string) and not user_string[counter_str].isnumeric():
 #     counter_str += 1
 #
@@ -46,16 +46,22 @@
 
 # First we define the user input variables and initialise a counter
 user_input = (input("Please enter your number: "))
-counter = 0
+counter_1st_dig = 0
+counter_last_dig = 0
 
-# Next we construct a while loop to iterate through the number
-while counter <= len(user_input) and user_input[counter + 1] == user_input[counter]:
-    counter += 1
-    var = counter
+# Next we construct a while loop to iterate through the number. We want the loop to stop when both conditions are met
+#123445678
+while counter_1st_dig < len(user_input) and user_input[counter_1st_dig] != user_input[counter_1st_dig - 1]:
 
-    print(f"Here is your number {user_input[counter]} ")
+    counter_1st_dig += 1
+    if counter_1st_dig == len(user_input):
+        print("There are no repdigits in this string")
 
+    # this second while loop contained in this condition allows us to get the range the digits repeat
+    elif counter_1st_dig < len(user_input) and user_input[counter_1st_dig] == user_input[counter_1st_dig - 1]:
+        counter_last_dig = counter_1st_dig
+        while counter_last_dig < len(user_input) and user_input[counter_1st_dig] == user_input[counter_last_dig]:
+            counter_last_dig += 1
 
-
-
+        print(f"Here are your repdigits {user_input[counter_1st_dig -1 :counter_last_dig]} ")
 
